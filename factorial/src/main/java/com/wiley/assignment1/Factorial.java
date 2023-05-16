@@ -34,8 +34,17 @@ public class Factorial {
 		*/
 
 		//YOUR CODE STARTS HERE
-
-		return -1;
+                
+                String input = this.scanner.nextLine();
+                
+                if (input == null || input.isEmpty() || !input.matches("[1-9]|10")){
+                    System.out.println("Please Enter valid Input as number between 1 and 10 only, both inclusive");
+                    this.printStream.print("Please Enter valid Input as number between 1 and 10 only, both inclusive");
+                    return -1;
+                } else {
+                    return Integer.parseInt(input);
+                }
+                           
 
 		//YOUR CODE ENDS HERE
 		 
@@ -52,9 +61,11 @@ public class Factorial {
 		*/
 		 
 		int result = 1;
-		//YOUR CODE STARTS HERE
 
- 
+		//YOUR CODE STARTS HERE
+		 for (int i=num; i>0; i--){
+                     result *= i;
+		 }
 
 		//YOUR CODE ENDS HERE
 		this.printStream.print("The Factorial is: " + result);		
@@ -82,6 +93,7 @@ public class Factorial {
 		Factorial fact = new Factorial(System.in,System.out);
 		System.out.println("Enter an integer between 1 and 10, inclusive");
 		fact.calculateFactorial();	
+
 	 }
 
 	
